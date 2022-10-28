@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import { Box, Grid } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 import './form.css';
 
 import { theme } from '../../shared/themes/theme';
@@ -11,9 +11,14 @@ export default function MoviePoster() {
       <Box>
         <Grid container>
           <Box className="poster">
-            <Box className="input-poster">
+            <Button
+              variant="text"
+              component="label"
+              sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center', fontSize: '14px' }}
+            >
               <FileUploadOutlinedIcon /> Upload da capa
-            </Box>
+              <input hidden accept="image/*" multiple type={'file'} />
+            </Button>
           </Box>
         </Grid>
       </Box>
