@@ -4,21 +4,17 @@ import { FormControl, Select, MenuItem, InputLabel, Button, Grid, SelectChangeEv
 import './form.css';
 import React from 'react';
 
-export default function MoviePlatforms(): JSX.Element {
+export const platformList: string[] = [];
+
+export function MoviePlatforms(): JSX.Element {
   const [platform, setPlatform] = React.useState('');
-  const platformSelected = document.querySelector('#platform-selected') as HTMLSelectElement;
-  const platforms = document.querySelector('.platforms') as HTMLDivElement;
 
   const handleChange = (event: SelectChangeEvent) => {
     setPlatform(event.target.value as string);
   };
 
   const handleClick = () => {
-    if (!platforms.innerText) {
-      platforms.innerHTML = platformSelected.innerText;
-    } else {
-      platforms.innerText = platforms.innerText + ', ' + platformSelected.innerText;
-    }
+    platformList.push(platform);
   };
 
   return (
@@ -39,7 +35,7 @@ export default function MoviePlatforms(): JSX.Element {
       <Grid item md={2}>
         <Button
           onClick={handleClick}
-          className="btn-form-control"
+          id="btn-add-platform"
           variant="outlined"
           type="submit"
           sx={{ marginTop: 3 }}

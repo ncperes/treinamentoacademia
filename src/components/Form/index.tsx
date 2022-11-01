@@ -3,8 +3,8 @@ import MoviePoster from './moviePoster';
 import MovieSinopse from './movieSinopse';
 
 import BtnCadastrar from './btnCadastrar';
-import MovieGenre from './movieGenre';
-import MoviePlatforms from './moviePlatforms';
+import { MovieGenre } from './movieGenre';
+import { MoviePlatforms } from './moviePlatforms';
 import MovieGenresAndPlatforms from './movieGenresAndPlatforms';
 import MovieName from './movieName';
 import MovieYear from './movieYear';

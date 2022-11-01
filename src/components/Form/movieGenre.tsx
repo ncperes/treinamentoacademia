@@ -8,25 +8,21 @@ import {
   SelectChangeEvent,
   ThemeProvider
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { theme } from '../../shared/themes/theme';
 
-export default function MovieGenre(): JSX.Element {
-  const [genre, setGenre] = React.useState('');
-  const genreSelected = document.querySelector('#genre-selected') as HTMLSelectElement;
-  const genres = document.querySelector('.genres') as HTMLDivElement;
+export const genreList: string[] = [];
+
+export function MovieGenre(): JSX.Element {
+  const [genre, setGenre] = useState<string>('');
 
   const handleChange = (event: SelectChangeEvent) => {
     setGenre(event.target.value as string);
   };
 
-  const handleClick = () => {
-    if (!genres.innerText) {
-      genres.innerText += genreSelected.innerText;
-    } else {
-      genres.innerText += ', ' + genreSelected.innerText;
-    }
-  };
+  function handleClick() {
+    genreList.push(genre);
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -51,13 +47,7 @@ export default function MovieGenre(): JSX.Element {
         </FormControl>
       </Grid>
       <Grid item md={2}>
-        <Button
-          onClick={handleClick}
-          className="btn-form-control"
-          variant="outlined"
-          type="submit"
-          sx={{ marginTop: 3 }}
-        >
+        <Button onClick={handleClick} id="btn-add-genre" variant="outlined" sx={{ marginTop: 3 }}>
           Adicionar
         </Button>
       </Grid>

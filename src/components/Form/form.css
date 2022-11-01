@@ -21,6 +21,14 @@
   cursor: pointer;
 }
 
+.genres, .platforms {
+  margin-left: 5px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
 
-
-
+.genres-and-platforms {
+  font-size: 12px;
+  margin-top: 7px;
+}
