@@ -8,14 +8,14 @@ export default function Buttons() {
       <Button
         className="btn-header"
         variant="text"
-        sx={{ marginLeft: '50px', paddingBottom: '55px', fontSize: '20px' }}
+        sx={{ marginLeft: '50px', marginBottom: '55px', fontSize: '20px' }}
       >
         Home
       </Button>
       <Button
         className="btn-header"
         variant="text"
-        sx={{ marginLeft: '50px', paddingBottom: '55px', fontSize: '20px' }}
+        sx={{ marginLeft: '50px', marginBottom: '55px', fontSize: '20px' }}
       >
         Cadastrar Filme
       </Button>
